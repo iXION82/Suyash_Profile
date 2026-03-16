@@ -7,7 +7,6 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { name, email, subject, message } = body;
 
-    // Validate required fields
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
         { message: "All fields are required" },
@@ -15,10 +14,8 @@ export async function POST(req: Request) {
       );
     }
 
-    // Connect to database
     await connectDB();
 
-    // Create new message
     const newMessage = await ContactMessage.create({
       name,
       email,
@@ -31,7 +28,6 @@ export async function POST(req: Request) {
       { status: 201 }
     );
   } catch (error: any) {
-    console.error("Contact Form API Error:", error);
     return NextResponse.json(
       { message: "Failed to send message", error: error.message },
       { status: 500 }

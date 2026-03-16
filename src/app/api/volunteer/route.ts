@@ -7,7 +7,6 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { email, role } = body;
 
-    // Validate required fields
     if (!email || !role) {
       return NextResponse.json(
         { message: "Email and Role are required" },
@@ -15,10 +14,8 @@ export async function POST(req: Request) {
       );
     }
 
-    // Connect to database
     await connectDB();
 
-    // Check if email already exists
     const existingVolunteer = await Volunteer.findOne({ email });
     if (existingVolunteer) {
       return NextResponse.json(
@@ -27,7 +24,6 @@ export async function POST(req: Request) {
       );
     }
 
-    // Create new volunteer entry
     const newVolunteer = await Volunteer.create({
       email,
       role,
@@ -38,9 +34,6 @@ export async function POST(req: Request) {
       { status: 201 }
     );
   } catch (error: any) {
-    console.error("Volunteer API Error:", error);
-    
-    // Check for MongoDB duplicate key error (E11000)
     if (error.code === 11000) {
       return NextResponse.json(
         { message: "This email has already joined the campaign!" },
