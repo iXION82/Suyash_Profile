@@ -16,7 +16,6 @@ export default function VisionScene() {
       color: i % 2 === 0 ? "#f0c040" : "#00e5ff",
     }));
   }, []);
-
   useFrame((state) => {
     if (!groupRef.current) return;
     const t = state.clock.elapsedTime;
@@ -52,7 +51,6 @@ export default function VisionScene() {
         ))}
       </group>
 
-      {/* Ground plane */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.01, 0]}>
         <planeGeometry args={[20, 20]} />
         <meshStandardMaterial
