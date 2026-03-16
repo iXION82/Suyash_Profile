@@ -11,17 +11,17 @@ const ConfettiEffect = dynamic(
 );
 
 export default function JoinSection() {
-  const [volunteerCount, setVolunteerCount] = useState<number>(200); // 200 as base fallback
+  const [volunteerCount, setVolunteerCount] = useState<number>(100);
   
   useEffect(() => {
-    // Fetch real count from DB
+
     const fetchCount = async () => {
       try {
         const res = await fetch("/api/volunteer/count");
         if (res.ok) {
           const data = await res.json();
-          // Let's say we add 200 base + actual DB signups as a vanity metric
-          setVolunteerCount(200 + data.count);
+
+          setVolunteerCount(100 + data.count);
         }
       } catch (err) {
         console.error("Failed to fetch count", err);
@@ -37,7 +37,6 @@ export default function JoinSection() {
 
   return (
     <SectionWrapper id="join" className="py-24 md:py-32 px-4 relative overflow-hidden">
-      {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-32 w-64 h-64 rounded-full bg-gold/5 blur-3xl" />
         <div className="absolute bottom-1/4 -right-32 w-64 h-64 rounded-full bg-cyan-accent/5 blur-3xl" />
@@ -65,7 +64,6 @@ export default function JoinSection() {
 
         <ConfettiEffect onSuccess={handleNewSignup} />
 
-        {/* Social proof */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

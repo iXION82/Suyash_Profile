@@ -17,7 +17,6 @@ export default function GallerySection() {
   return (
     <SectionWrapper id="gallery" className="py-24 md:py-32 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

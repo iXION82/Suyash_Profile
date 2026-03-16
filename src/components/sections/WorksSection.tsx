@@ -5,40 +5,25 @@ import SectionWrapper from "@/components/ui/SectionWrapper";
 
 const works = [
   {
-    icon: "🎪",
-    title: "Organized Student Events",
-    description: "Led the planning and execution of major campus events, bringing together hundreds of students for memorable experiences.",
-    tag: "Events",
+    icon: "🏋️",
+    title: "Proposal for Hostel Gym Equipment",
+    description:
+      "Worked on proposing the installation of basic gym equipment in hostels so students can stay active and maintain a healthy lifestyle without needing to leave the hostel.",
+    tag: "Infrastructure",
   },
   {
     icon: "🤝",
-    title: "Supported Student Clubs",
-    description: "Provided guidance and resources to multiple student organizations, helping them grow their membership and impact.",
+    title: "Supporting Student Communities",
+    description:
+      "Actively collaborated with different student groups and clubs, helping organize activities and encouraging more students to participate in campus life.",
     tag: "Community",
   },
   {
-    icon: "🌱",
-    title: "Campus Initiatives",
-    description: "Participated in and drove sustainability, cleanliness, and campus beautification initiatives.",
-    tag: "Campus",
-  },
-  {
-    icon: "🎓",
-    title: "Fresher Integration",
-    description: "Helped new students integrate into campus life through buddy programs and orientation activities.",
-    tag: "Mentorship",
-  },
-  {
-    icon: "💻",
-    title: "Tech Community Building",
-    description: "Co-founded coding circles and tech forums, creating spaces for knowledge sharing and collaborative learning.",
-    tag: "Technology",
-  },
-  {
-    icon: "🎨",
-    title: "Cultural Promotion",
-    description: "Championed cultural diversity on campus by organizing heritage weeks and intercultural exchange events.",
-    tag: "Culture",
+    icon: "🏠",
+    title: "Improving Hostel Life",
+    description:
+      "Raised concerns and suggestions around everyday hostel facilities, focusing on small but meaningful improvements that make student life more comfortable.",
+    tag: "Student Life",
   },
 ];
 
@@ -46,7 +31,6 @@ export default function WorksSection() {
   return (
     <SectionWrapper id="works" className="py-24 md:py-32 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +47,6 @@ export default function WorksSection() {
           </h2>
         </motion.div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {works.map((w, i) => (
             <motion.div

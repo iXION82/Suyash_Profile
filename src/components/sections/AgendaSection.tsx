@@ -6,40 +6,76 @@ import AgendaCard from "@/components/ui/AgendaCard";
 
 const agendaItems = [
   {
-    icon: "🏫",
-    title: "Better Student Facilities",
+    icon: "🧺",
+    title: "Washing Machines in Hostels",
     description:
-      "Upgrade common rooms, study areas, and recreational spaces to create a more comfortable campus environment for everyone.",
+      "Laundry shouldn’t be a hassle. I will work towards installing washing machines in hostels so students have easy and reliable access to basic facilities.",
   },
   {
     icon: "📶",
-    title: "Improved Wi-Fi Across Campus",
+    title: "Better Internet Speeds",
     description:
-      "Expand high-speed internet coverage to every corner of the campus, including hostels, libraries, and outdoor areas.",
+      "Fast and reliable internet is essential for both academics and everyday life. I aim to push for improved internet speeds and better connectivity across ISM.",
   },
   {
-    icon: "🎭",
-    title: "More Cultural & Technical Events",
+    icon: "🎉",
+    title: "Better Organized Fests",
     description:
-      "Organize diverse events that cater to all interests — from hackathons and workshops to festivals and art exhibitions.",
+      "Fests like Concetto should be something every student is proud of. I want to work towards better planning, smoother execution, and more engaging events.",
   },
   {
     icon: "🗳️",
-    title: "Transparent Representation",
+    title: "Transparent Decision Making",
     description:
-      "Implement regular town halls and public reports so students always know how decisions are being made.",
+      "Students deserve to know how decisions affecting them are made. I believe in clear communication and greater transparency in student governance.",
   },
   {
-    icon: "💬",
-    title: "Open Communication Channels",
+    icon: "🏆",
+    title: "Coach Accountability",
     description:
-      "Create digital platforms and feedback systems where students can voice concerns and suggest improvements anytime.",
+      "Sports performance improves when training is taken seriously. Evaluating coaches based on inter-hostel results can help ensure better guidance for athletes.",
   },
   {
-    icon: "🤝",
-    title: "Student Support Programs",
+    icon: "🛣️",
+    title: "Better Roads & Infrastructure",
     description:
-      "Establish mentorship programs, mental health support, and career guidance services accessible to all students.",
+      "Small infrastructure improvements can make daily life easier. I will work towards better roads, pathways, and overall campus infrastructure.",
+  },
+  {
+    icon: "🥇",
+    title: "Stronger Inter IIT Performance",
+    description:
+      "ISM has incredible talent. By improving preparation and support for cultural, technical, and sports teams, we can aim for stronger Inter IIT results.",
+  },
+  {
+    icon: "🍽️",
+    title: "Flexible Mess Card System",
+    description:
+      "Students should only pay for the meals they actually consume and should have the flexibility to eat in any hostel mess.",
+  },
+  {
+    icon: "💧",
+    title: "More RO & Water Coolers",
+    description:
+      "Access to clean drinking water should never be a problem. I aim to push for more RO systems and water coolers across hostels.",
+  },
+  {
+    icon: "☕",
+    title: "A Quality Campus Café",
+    description:
+      "A good café can become a hub for conversations, ideas, and relaxation. I will explore bringing a great café experience to ISM.",
+  },
+  {
+    icon: "🏋️",
+    title: "Gym Equipment in Hostels",
+    description:
+      "Fitness facilities should be accessible to everyone. Adding basic gym equipment in hostels can help students stay active and healthy.",
+  },
+  {
+    icon: "🏠",
+    title: "Improved Hostel Amenities",
+    description:
+      "Hostel life should be comfortable and well maintained. I want to work towards better common rooms, cycle stands, and overall hostel facilities.",
   },
 ];
 

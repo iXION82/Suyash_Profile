@@ -46,7 +46,7 @@ export default function HeroSection() {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-light text-sm font-medium text-gold mb-8"
         >
           <span className="w-2 h-2 rounded-full bg-gold animate-pulse-glow" />
-          Candidate for Student Council
+          Candidate for Student Council (GymKhana)
         </motion.div>
 
         <h1 className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight">

@@ -7,39 +7,27 @@ import TimelineItem from "@/components/ui/TimelineItem";
 const timelineData = [
   {
     year: "Year 1",
-    title: "Joined Student Community",
+    title: "Joined FinTech Club",
     description:
-      "Became an active member of the student community, participating in orientation programs and welcoming new students to campus life.",
-  },
-  {
-    year: "Year 1",
-    title: "Event Volunteer",
-    description:
-      "Volunteered for multiple campus events, gaining firsthand experience in event management and student coordination.",
+      "Became an active member of the FinTech Club and contributed to various activities, gaining exposure to finance and technology while collaborating with fellow students.",
   },
   {
     year: "Year 2",
-    title: "Club Coordinator",
+    title: "Class Representative (Mechanical BTech)",
     description:
-      "Took on leadership roles in student clubs, organizing workshops, technical sessions, and cultural events that brought students together.",
+      "Elected as the Class Representative for Mechanical BTech, representing classmates and acting as a bridge between students and faculty.",
   },
   {
     year: "Year 2",
-    title: "Student Council Intern",
+    title: "Vice President, Hostel Executive Committee",
     description:
-      "Served as a student council intern, supporting ongoing initiatives and learning the inner workings of student governance.",
+      "Served as the Vice President of the Hostel Executive Committee (HEC), helping manage hostel affairs and working to improve the hostel experience for residents.",
   },
   {
-    year: "Year 3",
-    title: "Initiative Leader",
+    year: "Year 2",
+    title: "Hosted Hostel Day Events",
     description:
-      "Led student-driven initiatives focused on improving campus infrastructure, organizing feedback drives, and representing student concerns.",
-  },
-  {
-    year: "Year 3",
-    title: "Campaign Launch",
-    description:
-      "Launched the campaign for Student Council President, driven by a clear vision and strong support from the student community.",
+      "Led the organization and hosting of multiple events for Hostel Day, coordinating teams and creating memorable experiences for hostel residents.",
   },
 ];
 

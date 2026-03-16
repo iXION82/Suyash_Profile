@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 
+import Image from "next/image";
+
 export default function AboutSection() {
   return (
     <SectionWrapper id="about" className="py-24 md:py-32 px-4">
@@ -31,19 +33,20 @@ export default function AboutSection() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden glass-light">
-              <div className="absolute inset-0 bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-gold/30 to-cyan-accent/30 mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-6xl font-[family-name:var(--font-playfair)] font-bold gradient-text">S</span>
-                  </div>
-                  <p className="text-white/40 text-sm">Suyash Gupta</p>
-                </div>
-              </div>
-
-              <div className="absolute -top-3 -right-3 w-24 h-24 border-2 border-gold/20 rounded-2xl" />
-              <div className="absolute -bottom-3 -left-3 w-24 h-24 border-2 border-cyan-accent/20 rounded-2xl" />
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden glass-light border border-white/10 group">
+              <Image 
+                src="/suyashProfile.jpeg"
+                alt="Suyash Gupta Profile"
+                fill
+                className="object-cover object-top filter grayscale hover:grayscale-0 transition-all duration-700"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-80" />
             </div>
+
+            <div className="absolute -top-3 -right-3 w-24 h-24 border-2 border-gold/20 rounded-2xl" />
+            <div className="absolute -bottom-3 -left-3 w-24 h-24 border-2 border-cyan-accent/20 rounded-2xl" />
 
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
