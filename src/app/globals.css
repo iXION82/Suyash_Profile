@@ -30,6 +30,12 @@ body {
   color: #ffffff;
   font-family: var(--font-body);
   overflow-x: hidden;
+  cursor: none;
+}
+
+/* Hide cursor on all elements */
+* {
+  cursor: none !important;
 }
 
 /* Custom animated cursor */

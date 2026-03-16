@@ -60,7 +60,6 @@ export default function VisionSection() {
           nurtures growth, celebrates diversity, and opens doors to opportunity.
         </motion.p>
 
-        {/* Vision pillars */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           {[
             {
@@ -87,9 +86,14 @@ export default function VisionSection() {
               transition={{ duration: 0.6, delay: 0.3 + i * 0.15 }}
               className="glass-light rounded-2xl p-6 text-center hover:border-cyan-accent/30 transition-colors duration-300"
             >
-              <div className="text-4xl mb-3">{item.icon}</div>
-              <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-              <p className="text-white/50 text-sm">{item.desc}</p>
+              <div className="group">
+  <h3 className="font-bold text-xl mb-2 text-white transition-colors duration-300 group-hover:text-cyan-400">
+    {item.title}
+  </h3>
+  <p className="text-white/60 text-sm leading-relaxed transition-opacity duration-300 group-hover:text-white/80">
+    {item.desc}
+  </p>
+</div>
             </motion.div>
           ))}
         </div>
