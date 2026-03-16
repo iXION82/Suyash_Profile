@@ -7,7 +7,6 @@ export default function AboutSection() {
   return (
     <SectionWrapper id="about" className="py-24 md:py-32 px-4">
       <div className="max-w-6xl mx-auto">
-        {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,9 +22,8 @@ export default function AboutSection() {
           </h2>
         </motion.div>
 
-        {/* Two-column layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Left – Animated visual */}
+
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -34,7 +32,6 @@ export default function AboutSection() {
             className="relative"
           >
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden glass-light">
-              {/* Placeholder profile area */}
               <div className="absolute inset-0 bg-gradient-to-br from-navy-700 to-navy-900 flex items-center justify-center">
                 <div className="text-center">
                   <div className="w-32 h-32 rounded-full bg-gradient-to-br from-gold/30 to-cyan-accent/30 mx-auto mb-4 flex items-center justify-center">
@@ -44,12 +41,10 @@ export default function AboutSection() {
                 </div>
               </div>
 
-              {/* Decorative elements */}
               <div className="absolute -top-3 -right-3 w-24 h-24 border-2 border-gold/20 rounded-2xl" />
               <div className="absolute -bottom-3 -left-3 w-24 h-24 border-2 border-cyan-accent/20 rounded-2xl" />
             </div>
 
-            {/* Floating stat cards */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -57,7 +52,7 @@ export default function AboutSection() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="absolute -right-4 top-8 glass rounded-xl p-4 text-center"
             >
-              <p className="text-2xl font-bold text-gold">3+</p>
+              <p className="text-2xl font-bold text-gold">2+</p>
               <p className="text-xs text-white/50">Years Active</p>
             </motion.div>
 
@@ -68,12 +63,11 @@ export default function AboutSection() {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="absolute -left-4 bottom-12 glass rounded-xl p-4 text-center"
             >
-              <p className="text-2xl font-bold text-cyan-accent">20+</p>
+              <p className="text-2xl font-bold text-cyan-accent">10+</p>
               <p className="text-xs text-white/50">Events Led</p>
             </motion.div>
           </motion.div>
 
-          {/* Right – Text content */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -82,22 +76,24 @@ export default function AboutSection() {
             className="space-y-6"
           >
             <p className="text-lg md:text-xl text-white/80 leading-relaxed">
-              Suyash Gupta is a dedicated student leader who believes progress begins
-              with <span className="text-gold font-semibold">listening</span>.
-            </p>
-            <p className="text-white/60 leading-relaxed">
-              Throughout his time in college, he has actively participated in academic,
-              cultural, and social initiatives that aim to improve the student experience.
-              From organizing campus events to mentoring freshers, Suyash has consistently
-              demonstrated his commitment to building a vibrant and inclusive campus community.
-            </p>
-            <p className="text-white/60 leading-relaxed">
-              With a strong belief in transparency and collective action, Suyash envisions
-              a campus where every idea is valued and every student has the opportunity to
-              thrive.
-            </p>
+  I believe progress begins with <span className="text-gold font-semibold">listening</span>.
+</p>
 
-            {/* Key values */}
+<p className="text-white/60 leading-relaxed">
+  During my time at ISM, I’ve tried to stay actively involved in the things that make
+  student life better — whether that’s participating in academic and cultural
+  initiatives, helping organize events, or supporting new students as they begin
+  their journey here. For me, these experiences have always been about contributing
+  to the community that we all share.
+</p>
+
+<p className="text-white/60 leading-relaxed">
+  I strongly believe that ISM grows stronger when every student feels heard and
+  valued. My goal is to help build an environment where ideas are openly shared,
+  collaboration is encouraged, and every student has the opportunity to grow,
+  contribute, and thrive.
+</p>
+
             <div className="grid grid-cols-2 gap-4 pt-4">
               {[
                 { icon: "🎯", label: "Goal-Oriented" },

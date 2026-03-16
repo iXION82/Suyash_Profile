@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/ui/SectionWrapper";
@@ -10,6 +11,30 @@ const ConfettiEffect = dynamic(
 );
 
 export default function JoinSection() {
+  const [volunteerCount, setVolunteerCount] = useState<number>(200); // 200 as base fallback
+  
+  useEffect(() => {
+    // Fetch real count from DB
+    const fetchCount = async () => {
+      try {
+        const res = await fetch("/api/volunteer/count");
+        if (res.ok) {
+          const data = await res.json();
+          // Let's say we add 200 base + actual DB signups as a vanity metric
+          setVolunteerCount(200 + data.count);
+        }
+      } catch (err) {
+        console.error("Failed to fetch count", err);
+      }
+    };
+    
+    fetchCount();
+  }, []);
+
+  const handleNewSignup = () => {
+    setVolunteerCount(prev => prev + 1);
+  };
+
   return (
     <SectionWrapper id="join" className="py-24 md:py-32 px-4 relative overflow-hidden">
       {/* Background decorations */}
@@ -38,7 +63,7 @@ export default function JoinSection() {
           </p>
         </motion.div>
 
-        <ConfettiEffect />
+        <ConfettiEffect onSuccess={handleNewSignup} />
 
         {/* Social proof */}
         <motion.div
@@ -59,7 +84,7 @@ export default function JoinSection() {
             ))}
           </div>
           <p className="text-white/50 text-sm">
-            <span className="text-gold font-bold">200+</span> students have joined
+            <span className="text-gold font-bold">{volunteerCount}</span> students have joined
           </p>
         </motion.div>
       </div>

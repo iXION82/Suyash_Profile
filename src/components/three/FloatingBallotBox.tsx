@@ -19,7 +19,6 @@ export default function FloatingBallotBox() {
   return (
     <Float speed={1.5} rotationIntensity={0.3} floatIntensity={0.5}>
       <group ref={groupRef} scale={1.2}>
-        {/* Main box */}
         <RoundedBox args={[2, 1.5, 1.2]} radius={0.08} smoothness={4}>
           <meshStandardMaterial
             color="#1b2466"
@@ -30,7 +29,6 @@ export default function FloatingBallotBox() {
           />
         </RoundedBox>
 
-        {/* Slot on top */}
         <mesh ref={slotRef} position={[0, 0.76, 0]}>
           <boxGeometry args={[1.0, 0.06, 0.12]} />
           <meshStandardMaterial
@@ -40,7 +38,6 @@ export default function FloatingBallotBox() {
           />
         </mesh>
 
-        {/* Gold trim lines */}
         <mesh position={[0, 0, 0.61]}>
           <planeGeometry args={[2, 1.5]} />
           <meshStandardMaterial
@@ -51,7 +48,6 @@ export default function FloatingBallotBox() {
           />
         </mesh>
 
-        {/* Vote star emblem */}
         <mesh position={[0, 0.1, 0.62]}>
           <circleGeometry args={[0.25, 5]} />
           <meshStandardMaterial
@@ -63,7 +59,6 @@ export default function FloatingBallotBox() {
           />
         </mesh>
 
-        {/* Glow ring around emblem */}
         <mesh position={[0, 0.1, 0.615]}>
           <ringGeometry args={[0.28, 0.35, 32]} />
           <meshStandardMaterial
@@ -75,7 +70,6 @@ export default function FloatingBallotBox() {
           />
         </mesh>
 
-        {/* Base */}
         <mesh position={[0, -0.85, 0]}>
           <boxGeometry args={[2.2, 0.15, 1.4]} />
           <meshStandardMaterial
@@ -85,7 +79,6 @@ export default function FloatingBallotBox() {
           />
         </mesh>
 
-        {/* Point light for glow effect */}
         <pointLight
           position={[0, 0.5, 1.5]}
           color="#f0c040"

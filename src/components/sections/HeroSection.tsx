@@ -30,19 +30,15 @@ export default function HeroSection() {
 
   return (
     <SectionWrapper id="hero" fullHeight className="flex items-center justify-center overflow-hidden">
-      {/* 3D Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <SceneCanvas camera={{ position: [0, 0, 8], fov: 60 }}>
           <FloatingText />
         </SceneCanvas>
       </div>
 
-      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-navy-950/60 via-navy-950/40 to-navy-950 z-[1]" />
 
-      {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        {/* Candidate badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -53,7 +49,6 @@ export default function HeroSection() {
           Candidate for Student Council
         </motion.div>
 
-        {/* Name with letter animation */}
         <h1 className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl md:text-8xl font-bold mb-6 leading-tight">
           {name.split("").map((char, i) => (
             <motion.span
@@ -69,7 +64,6 @@ export default function HeroSection() {
           ))}
         </h1>
 
-        {/* Tagline */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -80,7 +74,6 @@ export default function HeroSection() {
           <span className="gradient-text font-semibold">stronger voices</span>.
         </motion.p>
 
-        {/* Introduction */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -91,7 +84,6 @@ export default function HeroSection() {
           and ensuring every student voice is heard.
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

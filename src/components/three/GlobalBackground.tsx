@@ -8,7 +8,7 @@ import { Stars } from "@react-three/drei";
 function AuroraDust() {
   const meshRef = useRef<THREE.Points>(null);
   const { size, viewport } = useThree();
-  const count = 1500;
+  const count = 15000;
 
   const particles = useMemo(() => {
     const positions = new Float32Array(count * 3);
@@ -21,12 +21,14 @@ function AuroraDust() {
 
     for (let i = 0; i < count; i++) {
       // Create a wide cylinder-like spread for a flow effect
-      const radius = 5 + Math.random() * 15;
+      const radius = 5 + Math.random() * 25; // Wider spread
       const angle = Math.random() * Math.PI * 2;
       const x = Math.cos(angle) * radius;
       const z = Math.sin(angle) * radius;
-      // Tall spread
-      const y = (Math.random() - 0.5) * 40;
+      
+      // Massive vertical spread to cover the entire page
+      // Spread from roughly +30 down to -200
+      const y = 30 - Math.random() * 230;
 
       positions[i * 3] = x;
       positions[i * 3 + 1] = y;
@@ -74,7 +76,7 @@ function AuroraDust() {
     meshRef.current.rotation.x = mouse.current.y * 0.1;
     
     // Parallax effect applied to the entire particle group based on scroll
-    meshRef.current.position.y = scrollY.current * 0.01;
+    meshRef.current.position.y = scrollY.current * 0.005;
 
     // Animate individual particles for a flowing "aurora" effect
     const positions = meshRef.current.geometry.attributes.position.array as Float32Array;
@@ -100,7 +102,7 @@ function AuroraDust() {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.06}
+        size={0.04}
         vertexColors
         transparent
         opacity={0.6}

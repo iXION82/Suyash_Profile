@@ -48,10 +48,7 @@ export default function Home() {
   return (
     <main className="relative">
       <Navbar />
-
-      {/* Section dividers are built into the gradient backgrounds */}
       <HeroSection />
-
       <div className="section-divider" />
       <AboutSection />
 

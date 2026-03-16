@@ -14,18 +14,14 @@ export default function FloatingText() {
   useFrame((state) => {
     if (groupRef.current) {
       if (!hovered) {
-        // Smooth continuous rotation when not hovered
         targetRotation.current.y += 0.005;
         targetRotation.current.x = 0;
       } else {
-        // Track mouse position mapped to rotation when hovered
         const mouseX = (state.pointer.x * Math.PI) / 4;
         const mouseY = -(state.pointer.y * Math.PI) / 4;
         targetRotation.current.x = mouseY;
         targetRotation.current.y = mouseX;
       }
-
-      // Smoothly interpolate current rotation to target rotation
       groupRef.current.rotation.y = THREE.MathUtils.lerp(
         groupRef.current.rotation.y,
         targetRotation.current.y,
@@ -36,8 +32,6 @@ export default function FloatingText() {
         targetRotation.current.x,
         0.1
       );
-
-      // Simple bobbing motion
       groupRef.current.position.y = Math.sin(state.clock.elapsedTime * 0.8) * 0.2;
     }
   });
@@ -75,7 +69,6 @@ export default function FloatingText() {
           </Text3D>
         </Center>
 
-        {/* Dynamic lights based on hover state */}
         <pointLight
           position={[0, 0, -1]}
           color={hovered ? "#f0c040" : "#00e5ff"}
