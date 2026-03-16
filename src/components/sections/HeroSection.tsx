@@ -31,11 +31,9 @@ export default function HeroSection() {
   return (
     <SectionWrapper id="hero" fullHeight className="flex items-center justify-center overflow-hidden">
       {/* 3D Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 pointer-events-none">
         <SceneCanvas camera={{ position: [0, 0, 8], fov: 60 }}>
           <FloatingText />
-          <ParticleField count={400} color="#f0c040" size={0.015} spread={18} />
-          <ParticleField count={200} color="#00e5ff" size={0.01} spread={20} />
         </SceneCanvas>
       </div>
 

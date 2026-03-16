@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import CursorTrail from "@/components/ui/CursorTrail";
 import CustomCursor from "@/components/ui/CustomCursor";
+import BackgroundCanvas from "@/components/three/BackgroundCanvas";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         <CursorTrail />
         <CustomCursor />
+        <BackgroundCanvas />
         {children}
       </body>
     </html>
