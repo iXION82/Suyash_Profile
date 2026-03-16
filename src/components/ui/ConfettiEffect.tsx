@@ -16,10 +16,43 @@ interface ConfettiPiece {
 
 export default function ConfettiEffect() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
   const piecesRef = useRef<ConfettiPiece[]>([]);
 
   const colors = ["#f0c040", "#00e5ff", "#ffffff", "#f7d774", "#00b8d4", "#4a5abf"];
+
+  const animate = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    piecesRef.current = piecesRef.current.filter((p) => p.life > 0);
+
+    piecesRef.current.forEach((p) => {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.3;
+      p.rotation += p.rotationSpeed;
+      p.life -= 0.012;
+
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate((p.rotation * Math.PI) / 180);
+      ctx.globalAlpha = p.life;
+      ctx.fillStyle = p.color;
+      ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+      ctx.restore();
+    });
+
+    if (piecesRef.current.length > 0) {
+      animationRef.current = requestAnimationFrame(animate);
+    } else {
+      animationRef.current = null;
+    }
+  }, []);
 
   const triggerConfetti = useCallback(() => {
     const canvas = canvasRef.current;
@@ -29,7 +62,6 @@ export default function ConfettiEffect() {
     canvas.width = rect.width;
     canvas.height = rect.height;
 
-    // Add new pieces
     for (let i = 0; i < 80; i++) {
       piecesRef.current.push({
         x: canvas.width / 2,
@@ -47,40 +79,7 @@ export default function ConfettiEffect() {
     if (!animationRef.current) {
       animate();
     }
-  }, []);
-
-  const animate = useCallback(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    piecesRef.current = piecesRef.current.filter((p) => p.life > 0);
-
-    piecesRef.current.forEach((p) => {
-      p.x += p.vx;
-      p.y += p.vy;
-      p.vy += 0.3; // gravity
-      p.rotation += p.rotationSpeed;
-      p.life -= 0.012;
-
-      ctx.save();
-      ctx.translate(p.x, p.y);
-      ctx.rotate((p.rotation * Math.PI) / 180);
-      ctx.globalAlpha = p.life;
-      ctx.fillStyle = p.color;
-      ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
-      ctx.restore();
-    });
-
-    if (piecesRef.current.length > 0) {
-      animationRef.current = requestAnimationFrame(animate);
-    } else {
-      animationRef.current = undefined;
-    }
-  }, []);
+  }, [animate, colors]);
 
   return (
     <div className="relative">
