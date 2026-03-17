@@ -30,17 +30,37 @@ body {
   color: #ffffff;
   font-family: var(--font-body);
   overflow-x: hidden;
-  cursor: none;
 }
 
-/* Hide cursor on all elements */
-* {
-  cursor: none !important;
+/* Hide system cursor only on real mouse pointers */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+  * {
+    cursor: none !important;
+  }
 }
 
-/* Custom animated cursor */
-body {
-  cursor: none;
+@media (pointer: coarse) {
+  body,
+  * {
+    cursor: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Ensure heavy cursor visuals never render */
+  .custom-cursor,
+  .custom-cursor-trail-dot {
+    display: none !important;
+  }
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .custom-cursor {
