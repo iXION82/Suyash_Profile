@@ -14,7 +14,6 @@ export default function BackgroundCanvas() {
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    // Initial check
     checkMobile();
     
     window.addEventListener('resize', checkMobile);
@@ -24,7 +23,6 @@ export default function BackgroundCanvas() {
   if (isMobile) {
     return (
       <div className="fixed inset-0 z-[-1] pointer-events-none bg-navy-950">
-        {/* Simple fallback background for mobile */}
         <div className="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950" />
       </div>
     );

@@ -14,20 +14,17 @@ function AuroraDust() {
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
     const colorTheme = [
-      new THREE.Color("#00e5ff"), // Cyan
-      new THREE.Color("#f0c040"), // Gold
-      new THREE.Color("#4a5abf"), // Purple-blue
+      new THREE.Color("#00e5ff"), 
+      new THREE.Color("#f0c040"), 
+      new THREE.Color("#4a5abf"), 
     ];
 
     for (let i = 0; i < count; i++) {
-      // Create a wide cylinder-like spread for a flow effect
-      const radius = 5 + Math.random() * 25; // Wider spread
+      const radius = 5 + Math.random() * 25; 
       const angle = Math.random() * Math.PI * 2;
       const x = Math.cos(angle) * radius;
       const z = Math.sin(angle) * radius;
       
-      // Massive vertical spread to cover the entire page
-      // Spread from roughly +30 down to -200
       const y = 30 - Math.random() * 230;
 
       positions[i * 3] = x;
@@ -68,21 +65,16 @@ function AuroraDust() {
   useFrame((state, delta) => {
     if (!meshRef.current) return;
     
-    // Smooth scroll interpolation
     scrollY.current = THREE.MathUtils.lerp(scrollY.current, targetScrollY.current, 0.05);
 
-    // Dynamic rotation based on time, mouse, and scroll
     meshRef.current.rotation.y = state.clock.elapsedTime * 0.05 + mouse.current.x * 0.2;
     meshRef.current.rotation.x = mouse.current.y * 0.1;
     
-    // Parallax effect applied to the entire particle group based on scroll
     meshRef.current.position.y = scrollY.current * 0.005;
 
-    // Animate individual particles for a flowing "aurora" effect
     const positions = meshRef.current.geometry.attributes.position.array as Float32Array;
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
-      // Gently drift particles
       positions[i3 + 1] += Math.sin(state.clock.elapsedTime * 0.5 + positions[i3]) * 0.01;
       positions[i3] += Math.cos(state.clock.elapsedTime * 0.3 + positions[i3 + 1]) * 0.01;
     }
@@ -130,13 +122,12 @@ function ConnectionWeb() {
     if (!lineRef.current) return;
     lineRef.current.rotation.y = state.clock.elapsedTime * 0.02;
     lineRef.current.rotation.z = state.clock.elapsedTime * 0.01;
-    lineRef.current.position.y = -scrollY.current * 0.005; // Different parallax speed
+    lineRef.current.position.y = -scrollY.current * 0.005; 
   });
 
   return (
     <group position={[0, -5, -15]}>
       <mesh ref={lineRef as any}>
-        {/* Large intricate icosahedron representing global connection */}
         <icosahedronGeometry args={[12, 2]} />
         <meshBasicMaterial
           color="#00e5ff"
@@ -148,7 +139,6 @@ function ConnectionWeb() {
         />
       </mesh>
       
-      {/* Inner complementary shape */}
       <mesh rotation={[Math.PI / 4, Math.PI / 4, 0]}>
         <octahedronGeometry args={[8, 1]} />
         <meshBasicMaterial
@@ -171,13 +161,10 @@ export default function GlobalBackground() {
       
       <ambientLight intensity={0.2} />
       
-      {/* Dynamic dust aurora */}
       <AuroraDust />
       
-      {/* Abstract geometric background structures */}
       <ConnectionWeb />
       
-      {/* Subtle deep space stars to add extreme depth */}
       <Stars radius={50} depth={50} count={3000} factor={4} saturation={1} fade speed={0.5} />
     </>
   );

@@ -33,13 +33,13 @@ const agendaItems = [
     icon: "🏆",
     title: "Coach Accountability",
     description:
-      "Sports performance improves when training is taken seriously. Evaluating coaches based on inter-hostel results can help ensure better guidance for athletes.",
+      "Sports performance improves when training is taken seriously. Evaluating coaches based on Inter-IIT results can help ensure better guidance for athletes.",
   },
   {
     icon: "🛣️",
     title: "Better Roads & Infrastructure",
     description:
-      "Small infrastructure improvements can make daily life easier. I will work towards better roads, pathways, and overall campus infrastructure.",
+      "Small infrastructure improvements can make daily life easier. I will work towards better roads, pathways, and overall ISM infrastructure.",
   },
   {
     icon: "🥇",

@@ -59,7 +59,7 @@ export default function FloatingText() {
           >
             ISM
             <meshStandardMaterial
-              color="#00e5ff" // Cyan accent
+              color="#00e5ff" 
               wireframe
               transparent
               opacity={0.8}
