@@ -10,8 +10,8 @@ const GlobalBackground = dynamic(
 
 export default function BackgroundCanvas() {
   return (
-    <div className="fixed inset-0 z-[-1] pointer-events-none">
-      <Canvas dpr={[1, 2]} gl={{ antialias: true, alpha: true }}>
+    <div className="fixed inset-0 z-[-1] pointer-events-none bg-navy-950">
+      <Canvas dpr={[1, 1.5]} gl={{ antialias: false, alpha: true }}>
         <GlobalBackground />
       </Canvas>
     </div>

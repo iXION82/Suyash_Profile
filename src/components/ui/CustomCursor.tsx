@@ -32,12 +32,30 @@ export default function CustomCursor() {
       }
     };
 
+    // Check for mobile/touch devices
+    const checkMobile = () => {
+      const isTouch = window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 768;
+      if (isTouch) {
+        setIsVisible(false);
+        // Clean up listeners immediately if mobile
+        window.removeEventListener("mousemove", updateMousePosition);
+        window.removeEventListener("mouseleave", handleMouseLeave);
+        window.removeEventListener("mouseenter", handleMouseEnter);
+        window.removeEventListener("mouseover", handleElementHover);
+      }
+      return isTouch;
+    };
+
+    if (checkMobile()) return;
+
+    window.addEventListener("resize", checkMobile);
     window.addEventListener("mousemove", updateMousePosition);
     window.addEventListener("mouseleave", handleMouseLeave);
     window.addEventListener("mouseenter", handleMouseEnter);
     window.addEventListener("mouseover", handleElementHover);
 
     return () => {
+      window.removeEventListener("resize", checkMobile);
       window.removeEventListener("mousemove", updateMousePosition);
       window.removeEventListener("mouseleave", handleMouseLeave);
       window.removeEventListener("mouseenter", handleMouseEnter);
@@ -45,6 +63,7 @@ export default function CustomCursor() {
     };
   }, [isVisible]);
 
+  // Prevent flash on hydration by only showing if strictly visible and mouse has moved
   if (!isVisible) return null;
 
   return (

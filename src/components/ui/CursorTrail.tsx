@@ -30,6 +30,13 @@ export default function CursorTrail() {
       "#00ff88", // Neon Green
     ];
 
+    // Check for mobile/touch devices
+    const isMobile = window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 768;
+    if (isMobile) {
+      canvas.style.display = "none";
+      return;
+    }
+
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;

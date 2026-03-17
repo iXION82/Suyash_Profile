@@ -8,7 +8,7 @@ import { Stars } from "@react-three/drei";
 function AuroraDust() {
   const meshRef = useRef<THREE.Points>(null);
   const { size, viewport } = useThree();
-  const count = 15000;
+  const count = 4000;
 
   const particles = useMemo(() => {
     const positions = new Float32Array(count * 3);
