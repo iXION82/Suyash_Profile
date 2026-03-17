@@ -35,7 +35,6 @@ export default function ExperienceSection() {
   return (
     <SectionWrapper id="experience" className="py-24 md:py-32 px-4">
       <div className="max-w-4xl mx-auto">
-        {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,10 +50,7 @@ export default function ExperienceSection() {
             <span className="gradient-text">Leadership</span>
           </h2>
         </motion.div>
-
-        {/* Timeline */}
         <div className="relative">
-          {/* Center line */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-gold/50 via-cyan-accent/30 to-transparent -translate-x-1/2" />
 
           <div className="space-y-12">
