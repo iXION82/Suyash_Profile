@@ -110,7 +110,9 @@ export default function ConfettiEffect({ onSuccess }: ConfettiEffectProps = {}) 
       
       const data = await res.json();
       
-      if (!res.ok) throw new Error(data.message || "Failed to submit");
+      if (!res.ok) {
+        throw new Error(data.message || data.error || "Failed to submit");
+      }
       
       triggerConfetti();
       setStatus("success");

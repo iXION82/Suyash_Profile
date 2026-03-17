@@ -28,8 +28,12 @@ export async function POST(req: Request) {
       { status: 201 }
     );
   } catch (error: any) {
+    console.error("🚀 Contact API Error Details:", error);
     return NextResponse.json(
-      { message: "Failed to send message", error: error.message },
+      { 
+        message: error.message || "Failed to send message", 
+        error: error.stack 
+      },
       { status: 500 }
     );
   }

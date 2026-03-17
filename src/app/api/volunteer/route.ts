@@ -34,6 +34,8 @@ export async function POST(req: Request) {
       { status: 201 }
     );
   } catch (error: any) {
+    console.error("🚀 Volunteer Volunteer API Error Details:", error);
+    
     if (error.code === 11000) {
       return NextResponse.json(
         { message: "This email has already joined the campaign!" },
@@ -42,7 +44,10 @@ export async function POST(req: Request) {
     }
     
     return NextResponse.json(
-      { message: "Failed to process request", error: error.message },
+      { 
+        message: error.message || "Failed to process request", 
+        error: error.stack 
+      },
       { status: 500 }
     );
   }
