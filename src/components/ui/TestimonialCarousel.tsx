@@ -54,7 +54,6 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
         </AnimatePresence>
       </div>
 
-      {/* Navigation */}
       <div className="flex items-center justify-center gap-4 mt-6">
         <button
           onClick={prev}

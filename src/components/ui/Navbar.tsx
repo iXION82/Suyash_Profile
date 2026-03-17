@@ -10,8 +10,8 @@ const navLinks = [
   { label: "Agenda", href: "#agenda" },
   { label: "Experience", href: "#experience" },
   { label: "Works", href: "#works" },
-  { label: "Voices", href: "#testimonials" },
-  { label: "Gallery", href: "#gallery" },
+  // { label: "Voices", href: "#testimonials" },
+  // { label: "Gallery", href: "#gallery" },
   { label: "Join", href: "#join" },
   { label: "Contact", href: "#contact" },
 ];
@@ -60,7 +60,6 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-          {/* Logo */}
           <button
             onClick={() => scrollTo("#hero")}
             className="flex items-center gap-2 group"
@@ -73,7 +72,6 @@ export default function Navbar() {
             </span>
           </button>
 
-          {/* Desktop links */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <button
@@ -90,7 +88,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Mobile menu button */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="lg:hidden flex flex-col gap-1.5 p-2"
@@ -112,7 +109,6 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div

@@ -22,7 +22,6 @@ export default function TimelineItem({ year, title, description, index }: Timeli
         isLeft ? "md:flex-row" : "md:flex-row-reverse"
       } flex-row`}
     >
-      {/* Content */}
       <div className={`flex-1 ${isLeft ? "md:text-right" : "md:text-left"}`}>
         <div className="glass-light rounded-2xl p-6 hover:border-gold/20 transition-all duration-300">
           <span className="text-gold font-bold text-sm tracking-wider uppercase">
@@ -35,7 +34,6 @@ export default function TimelineItem({ year, title, description, index }: Timeli
         </div>
       </div>
 
-      {/* Center dot */}
       <div className="hidden md:flex flex-col items-center">
         <motion.div
           initial={{ scale: 0 }}
@@ -46,7 +44,6 @@ export default function TimelineItem({ year, title, description, index }: Timeli
         />
       </div>
 
-      {/* Spacer */}
       <div className="hidden md:block flex-1" />
     </motion.div>
   );

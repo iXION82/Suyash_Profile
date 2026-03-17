@@ -32,12 +32,10 @@ export default function CustomCursor() {
       }
     };
 
-    // Check for mobile/touch devices
     const checkMobile = () => {
       const isTouch = window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 768;
       if (isTouch) {
         setIsVisible(false);
-        // Clean up listeners immediately if mobile
         window.removeEventListener("mousemove", updateMousePosition);
         window.removeEventListener("mouseleave", handleMouseLeave);
         window.removeEventListener("mouseenter", handleMouseEnter);
@@ -63,12 +61,10 @@ export default function CustomCursor() {
     };
   }, [isVisible]);
 
-  // Prevent flash on hydration by only showing if strictly visible and mouse has moved
   if (!isVisible) return null;
 
   return (
     <>
-      {/* Inner Dot */}
       <motion.div
         className="fixed top-0 left-0 w-3 h-3 bg-gold rounded-full pointer-events-none z-[110] mix-blend-screen"
         animate={{
@@ -79,7 +75,6 @@ export default function CustomCursor() {
         transition={{ type: "tween", ease: "backOut", duration: 0.1 }}
       />
       
-      {/* Outer Ring */}
       <motion.div
         className="fixed top-0 left-0 w-8 h-8 rounded-full border border-cyan-accent pointer-events-none z-[110] mix-blend-screen"
         animate={{

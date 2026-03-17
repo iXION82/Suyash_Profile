@@ -116,9 +116,8 @@ export default function ConfettiEffect({ onSuccess }: ConfettiEffectProps = {}) 
       
       triggerConfetti();
       setStatus("success");
-      setEmail(""); // Clear email on success
+      setEmail("");
       
-      // Notify parent to increment counter
       if (onSuccess) {
         onSuccess();
       }

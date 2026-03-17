@@ -23,14 +23,13 @@ export default function CursorTrail() {
     }[] = [];
     
     const colors = [
-      "#f0c040", // Gold
-      "#00e5ff", // Cyan
-      "#ff007f", // Vibrant Pink
-      "#7000ff", // Vibrant Purple
-      "#00ff88", // Neon Green
+      "#f0c040",
+      "#00e5ff", 
+      "#ff007f", 
+      "#7000ff", 
+      "#00ff88", 
     ];
 
-    // Check for mobile/touch devices
     const isMobile = window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 768;
     if (isMobile) {
       canvas.style.display = "none";
@@ -59,12 +58,11 @@ export default function CursorTrail() {
         isMoving = false;
       }, 100);
       
-      // Add multiple particles for a chaotic effect
       for (let i = 0; i < 3; i++) {
         particles.push({
           x: mouse.x + (Math.random() - 0.5) * 20,
           y: mouse.y + (Math.random() - 0.5) * 20,
-          vx: (Math.random() - 0.5) * 8, // chaotic spread
+          vx: (Math.random() - 0.5) * 8,
           vy: (Math.random() - 0.5) * 8,
           life: 1,
           color: colors[Math.floor(Math.random() * colors.length)],
@@ -82,10 +80,9 @@ export default function CursorTrail() {
         const p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
-        p.life -= 0.02; // slow decay for longer trail
-        p.size *= 0.95; // shrink
+        p.life -= 0.02;
+        p.size *= 0.95;
         
-        // Add some gravity/drift for chaos
         p.vy += 0.1;
         p.vx += (Math.random() - 0.5) * 0.5;
         
@@ -95,7 +92,6 @@ export default function CursorTrail() {
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
         
-        // Add glow
         ctx.shadowBlur = 15;
         ctx.shadowColor = p.color;
         

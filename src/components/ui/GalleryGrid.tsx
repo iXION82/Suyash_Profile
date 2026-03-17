@@ -7,7 +7,6 @@ interface GalleryGridProps {
 }
 
 export default function GalleryGrid({ images }: GalleryGridProps) {
-  // Generate gradient placeholders since we don't have real images
   const gradients = [
     "from-navy-700 to-navy-500",
     "from-navy-600 to-cyan-accent/20",
@@ -34,7 +33,6 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
             }`}
             style={{ height: `${200 + (i % 3) * 80}px` }}
           >
-            {/* Placeholder content */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center p-4">
                 <div className="text-4xl mb-2 opacity-40">📸</div>
@@ -42,7 +40,6 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
               </div>
             </div>
 
-            {/* Hover overlay */}
             <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/10 transition-colors duration-300" />
             <div className="absolute inset-0 scale-100 group-hover:scale-110 transition-transform duration-500" />
           </div>
