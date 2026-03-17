@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 
@@ -9,10 +10,6 @@ const SceneCanvas = dynamic(() => import("@/components/three/SceneCanvas"), {
 });
 const FloatingText = dynamic(
   () => import("@/components/three/FloatingText"),
-  { ssr: false }
-);
-const ParticleField = dynamic(
-  () => import("@/components/three/ParticleField"),
   { ssr: false }
 );
 
@@ -27,13 +24,23 @@ const letterVariants = {
 
 export default function HeroSection() {
   const name = "Suyash Gupta";
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   return (
     <SectionWrapper id="hero" fullHeight className="flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <SceneCanvas camera={{ position: [0, 0, 8], fov: 60 }}>
-          <FloatingText />
-        </SceneCanvas>
+        {!isMobile && (
+          <SceneCanvas camera={{ position: [0, 0, 8], fov: 60 }}>
+            <FloatingText />
+          </SceneCanvas>
+        )}
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-navy-950/60 via-navy-950/40 to-navy-950 z-[1]" />

@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 
@@ -12,13 +13,24 @@ const VisionScene = dynamic(() => import("@/components/three/VisionScene"), {
 });
 
 export default function VisionSection() {
+  const [isMobile, setIsMobile] = useState(true);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <SectionWrapper id="vision" className="py-24 md:py-32 relative overflow-hidden">
       {/* Background 3D pillars */}
       <div className="absolute inset-0 opacity-40">
-        <SceneCanvas camera={{ position: [0, 2, 8], fov: 50 }}>
-          <VisionScene />
-        </SceneCanvas>
+        {!isMobile && (
+          <SceneCanvas camera={{ position: [0, 2, 8], fov: 50 }}>
+            <VisionScene />
+          </SceneCanvas>
+        )}
       </div>
 
       {/* Gradient overlays */}
