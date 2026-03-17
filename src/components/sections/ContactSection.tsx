@@ -10,14 +10,14 @@ const socials = [
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
     ),
-    href: "#",
+    href: "https://www.instagram.com/suyashgupta__0725?utm_source=qr&igsh=MWtieXBhM3Z4d2FoZQ%3D%3D",
   },
   {
     name: "LinkedIn",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
     ),
-    href: "#",
+    href: "https://www.linkedin.com/in/suyash-gupta-a3131431a/",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="text-sm text-white/50 mb-1">Email</p>
-                <p className="font-medium">suyashg0725@gamil.com</p>
+                <p className="font-medium">suyashg0725@gmail.com</p>
               </div>
             </div>
 
@@ -80,7 +80,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <p className="text-sm text-white/50 mb-1">Location</p>
-                <p className="font-medium">, Campus</p>
+                <p className="font-medium">Room-A330,Amber Hostel,IIT (ISM) Dhanbad</p>
               </div>
             </div>
 

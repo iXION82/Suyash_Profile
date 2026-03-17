@@ -27,14 +27,14 @@ const WorksSection = dynamic(
   () => import("@/components/sections/WorksSection"),
   { ssr: false }
 );
-const TestimonialsSection = dynamic(
-  () => import("@/components/sections/TestimonialsSection"),
-  { ssr: false }
-);
-const GallerySection = dynamic(
-  () => import("@/components/sections/GallerySection"),
-  { ssr: false }
-);
+// const TestimonialsSection = dynamic(
+//   () => import("@/components/sections/TestimonialsSection"),
+//   { ssr: false }
+// );
+// const GallerySection = dynamic(
+//   () => import("@/components/sections/GallerySection"),
+//   { ssr: false }
+// );
 const JoinSection = dynamic(
   () => import("@/components/sections/JoinSection"),
   { ssr: false }
@@ -64,11 +64,11 @@ export default function Home() {
       <div className="section-divider" />
       <WorksSection />
 
-      <div className="section-divider" />
+      {/* <div className="section-divider" />
       <TestimonialsSection />
 
       <div className="section-divider" />
-      <GallerySection />
+      <GallerySection /> */}
 
       <div className="section-divider" />
       <JoinSection />
