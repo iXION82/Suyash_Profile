@@ -117,7 +117,7 @@ export default function ContactSection() {
   <span className="text-white/50">
     Developed & Designed by{" "}
     <a
-      href="mailto:trivalent.dev@gmail.com"
+      href="mailto:trivalent102103@gmail.com"
       className="text-blue-400 font-medium hover:text-blue-300 hover:underline transition duration-200"
     >
       Trivalent
