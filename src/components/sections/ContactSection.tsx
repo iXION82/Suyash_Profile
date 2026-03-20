@@ -108,9 +108,22 @@ export default function ContactSection() {
       </div>
 
       <div className="mt-24 pt-8 border-t border-white/5 text-center">
-        <p className="text-white/30 text-sm">
-          © 2026 Suyash Gupta Campaign. Built with ❤️ for a better campus. || Developed and Designed by <a href="mailto:trivalent.dev@gmail.com" className="text-blue-400 hover:underline"> Trivalent</a>
-        </p>
+        <p className="text-white/40 text-sm text-center leading-relaxed">
+  © 2026 Suyash Gupta Campaign. Built with 
+  <span className="text-red-500 mx-1">❤️</span> 
+  for a better campus. 
+  <br className="hidden sm:block" />
+  
+  <span className="text-white/50">
+    Developed & Designed by{" "}
+    <a
+      href="mailto:trivalent.dev@gmail.com"
+      className="text-blue-400 font-medium hover:text-blue-300 hover:underline transition duration-200"
+    >
+      Trivalent
+    </a>
+  </span>
+</p>
       </div>
     </SectionWrapper>
   );
