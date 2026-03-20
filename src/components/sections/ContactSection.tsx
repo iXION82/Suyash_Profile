@@ -109,7 +109,7 @@ export default function ContactSection() {
 
       <div className="mt-24 pt-8 border-t border-white/5 text-center">
         <p className="text-white/30 text-sm">
-          © 2026 Suyash Gupta Campaign. Built with ❤️ for a better campus. || Developed and Designed by
+          © 2026 Suyash Gupta Campaign. Built with ❤️ for a better campus. || Developed and Designed by 
           <a href="mailto:trivalent.dev@gmail.com" className="text-blue-400 hover:underline">
             Trivalent
           </a>
