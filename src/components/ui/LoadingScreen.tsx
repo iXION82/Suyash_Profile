@@ -67,6 +67,7 @@ export default function LoadingScreen() {
               style={{
                 border: "1px solid rgba(240, 192, 64, 0.15)",
                 boxShadow: "0 0 40px rgba(240, 192, 64, 0.05)",
+                willChange: "transform",
               }}
             />
             <motion.div
@@ -76,6 +77,7 @@ export default function LoadingScreen() {
               style={{
                 border: "1px solid rgba(0, 229, 255, 0.1)",
                 boxShadow: "0 0 60px rgba(0, 229, 255, 0.03)",
+                willChange: "transform",
               }}
             />
             {/* Orbiting dot on ring 1 */}
@@ -83,6 +85,7 @@ export default function LoadingScreen() {
               animate={{ rotate: 360 }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               className="absolute w-48 h-48 md:w-64 md:h-64"
+              style={{ willChange: "transform" }}
             >
               <div
                 className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full"
@@ -97,6 +100,7 @@ export default function LoadingScreen() {
               animate={{ rotate: -360 }}
               transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
               className="absolute w-72 h-72 md:w-96 md:h-96"
+              style={{ willChange: "transform" }}
             >
               <div
                 className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 rounded-full"

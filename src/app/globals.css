@@ -161,6 +161,15 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+@media (max-width: 768px) {
+  .glass {
+    backdrop-filter: blur(8px);
+  }
+  .glass-light {
+    backdrop-filter: blur(6px);
+  }
+}
+
 /* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #f0c040, #00e5ff);

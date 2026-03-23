@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import AgendaCard from "@/components/ui/AgendaCard";
 
@@ -141,7 +142,25 @@ export default function AgendaSection() {
           </p>
         </motion.div>
 
-
+        {/* Manifesto Image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative max-w-2xl mx-auto mb-16 rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10 group"
+        >
+          {/* Ambient glow behind image */}
+          <div className="absolute inset-0 bg-gradient-to-tr from-gold/20 via-transparent to-cyan-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+          
+          <Image
+            src="/manifesto.jpeg"
+            alt="Official Campaign Manifesto"
+            width={1000}
+            height={1400}
+            className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          />
+        </motion.div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {agendaItems.map((item, i) => (
             <AgendaCard key={item.title} {...item} index={i} />

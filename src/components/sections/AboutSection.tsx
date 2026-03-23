@@ -55,7 +55,7 @@ export default function AboutSection() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="absolute -right-4 top-8 glass rounded-xl p-4 text-center"
             >
-              <p className="text-2xl font-bold text-gold">2+</p>
+              <p className="text-2xl font-bold text-gold">1.5+</p>
               <p className="text-xs text-white/50">Years Active</p>
             </motion.div>
 

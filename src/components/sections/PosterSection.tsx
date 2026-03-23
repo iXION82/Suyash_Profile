@@ -65,7 +65,7 @@ export default function PosterSection() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
               <div className="group relative">
                 <Image
-                  src="/poster.jpeg"
+                  src="/poster.png"
                   alt="Student Gymkhana Elections 2026 — Suyash Gupta Campaign Poster"
                   width={800}
                   height={1100}
