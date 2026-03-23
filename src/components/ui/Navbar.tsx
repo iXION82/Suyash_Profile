@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Agenda", href: "#agenda" },
   { label: "Experience", href: "#experience" },
   { label: "Works", href: "#works" },
+  { label: "Poster", href: "#poster" },
   // { label: "Voices", href: "#testimonials" },
   // { label: "Gallery", href: "#gallery" },
   { label: "Join", href: "#join" },

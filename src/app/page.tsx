@@ -27,6 +27,10 @@ const WorksSection = dynamic(
   () => import("@/components/sections/WorksSection"),
   { ssr: false }
 );
+const PosterSection = dynamic(
+  () => import("@/components/sections/PosterSection"),
+  { ssr: false }
+);
 // const TestimonialsSection = dynamic(
 //   () => import("@/components/sections/TestimonialsSection"),
 //   { ssr: false }
@@ -63,6 +67,9 @@ export default function Home() {
 
       <div className="section-divider" />
       <WorksSection />
+
+      <div className="section-divider" />
+      <PosterSection />
 
       {/* <div className="section-divider" />
       <TestimonialsSection />
