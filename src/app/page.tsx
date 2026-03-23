@@ -2,6 +2,10 @@
 
 import dynamic from "next/dynamic";
 
+const LoadingScreen = dynamic(
+  () => import("@/components/ui/LoadingScreen"),
+  { ssr: false }
+);
 const Navbar = dynamic(() => import("@/components/ui/Navbar"), { ssr: false });
 const HeroSection = dynamic(
   () => import("@/components/sections/HeroSection"),
@@ -51,6 +55,7 @@ const ContactSection = dynamic(
 export default function Home() {
   return (
     <main className="relative">
+      <LoadingScreen />
       <Navbar />
       <HeroSection />
       <div className="section-divider" />
