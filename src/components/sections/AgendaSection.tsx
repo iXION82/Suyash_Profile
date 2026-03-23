@@ -6,76 +6,114 @@ import AgendaCard from "@/components/ui/AgendaCard";
 
 const agendaItems = [
   {
-    icon: "🧺",
-    title: "Washing Machines in Hostels",
+    icon: "💰",
+    title: "Fair Festival Funding",
     description:
-      "Laundry shouldn’t be a hassle. I will work towards installing washing machines in hostels so students have easy and reliable access to basic facilities.",
+      "Every fest deserves a fair shot. I’ll work to make sure funds are distributed properly so no event feels overlooked and everyone gets a chance to shine.",
   },
   {
-    icon: "📶",
-    title: "Better Internet Speeds",
+    icon: "🏋️",
+    title: "Gym Facilities in Hostels",
     description:
-      "Fast and reliable internet is essential for both academics and everyday life. I aim to push for improved internet speeds and better connectivity across ISM.",
+      "Not everyone has time to go far just to work out. I want to bring decent gym facilities closer to where you live — right in the hostels.",
   },
   {
-    icon: "🎉",
-    title: "Better Organized Fests",
+    icon: "🕒",
+    title: "Flexible In-Time",
     description:
-      "Fests like Concetto should be something every student is proud of. I want to work towards better planning, smoother execution, and more engaging events.",
-  },
-  {
-    icon: "🗳️",
-    title: "Transparent Decision Making",
-    description:
-      "Students deserve to know how decisions affecting them are made. I believe in clear communication and greater transparency in student governance.",
+      "College life doesn’t run on a strict clock. I’ll push for a more flexible in-time while still keeping safety in mind.",
   },
   {
     icon: "🏆",
     title: "Coach Accountability",
     description:
-      "Sports performance improves when training is taken seriously. Evaluating coaches based on Inter-IIT results can help ensure better guidance for athletes.",
+      "If we’re putting in the effort, the system should too. Coaches should be evaluated based on Inter-IIT results so our teams get the guidance they deserve.",
+  },
+  {
+    icon: "🛺",
+    title: "Better Campus Transport",
+    description:
+      "Getting around campus shouldn’t be a struggle. More e-rickshaws and better transport can save time and make daily life easier.",
+  },
+  {
+    icon: "📝",
+    title: "Structured Fest Feedback",
+    description:
+      "After every fest, your voice should matter. I want proper feedback systems so events actually improve year after year.",
+  },
+  {
+    icon: "📚",
+    title: "Hostel Study Rooms",
+    description:
+      "Sometimes you just need a quiet place to focus. Dedicated study rooms in hostels can really help with that.",
+  },
+  {
+    icon: "🍽️",
+    title: "Mess Monitoring & Quality",
+    description:
+      "We all know mess food can be hit or miss. Regular checks and honest feedback systems can help keep the quality consistent.",
+  },
+  {
+    icon: "🍴",
+    title: "Flexible Mess Access",
+    description:
+      "You shouldn’t be stuck with just one mess. A flexible system where you can eat in any hostel would make things much more convenient.",
+  },
+  {
+    icon: "📊",
+    title: "Transparent Spending",
+    description:
+      "It’s your money too — you deserve to know where it’s going. I’ll push for clear and open reporting of how funds are used.",
+  },
+
+  {
+    icon: "🧺",
+    title: "Washing Machines in Hostels",
+    description:
+      "Doing laundry shouldn’t take hours or be a headache. I want to make sure every hostel has proper washing machines that actually work when you need them.",
+  },
+
+  {
+    icon: "📶",
+    title: "Better Internet Speeds",
+    description:
+      "Slow internet is frustrating, especially when you actually need it. I’ll work towards making campus WiFi faster and more reliable.",
+  },
+  {
+    icon: "🎉",
+    title: "Better Organized Fests",
+    description:
+      "Fests should feel exciting, not chaotic. With better planning and execution, we can make them smoother and more enjoyable for everyone.",
   },
   {
     icon: "🛣️",
     title: "Better Roads & Infrastructure",
     description:
-      "Small infrastructure improvements can make daily life easier. I will work towards better roads, pathways, and overall ISM infrastructure.",
+      "Small things like better roads and pathways can make a big difference in everyday life. I’ll push for steady improvements here.",
   },
   {
     icon: "🥇",
     title: "Stronger Inter IIT Performance",
     description:
-      "ISM has incredible talent. By improving preparation and support for cultural, technical, and sports teams, we can aim for stronger Inter IIT results.",
-  },
-  {
-    icon: "🍽️",
-    title: "Flexible Mess Card System",
-    description:
-      "Students should only pay for the meals they actually consume and should have the flexibility to eat in any hostel mess.",
+      "We have the talent — we just need the right support. I want to help our teams perform better across all Inter IIT events.",
   },
   {
     icon: "💧",
     title: "More RO & Water Coolers",
     description:
-      "Access to clean drinking water should never be a problem. I aim to push for more RO systems and water coolers across hostels.",
+      "Access to clean drinking water should never be an issue. More RO systems and coolers can fix that easily.",
   },
   {
     icon: "☕",
     title: "A Quality Campus Café",
     description:
-      "A good café can become a hub for conversations, ideas, and relaxation. I will explore bringing a great café experience to ISM.",
-  },
-  {
-    icon: "🏋️",
-    title: "Gym Equipment in Hostels",
-    description:
-      "Fitness facilities should be accessible to everyone. Adding basic gym equipment in hostels can help students stay active and healthy.",
+      "A good café isn’t just about food — it’s a place to relax, hang out, and have conversations. I’d love to bring that vibe to campus.",
   },
   {
     icon: "🏠",
     title: "Improved Hostel Amenities",
     description:
-      "Hostel life should be comfortable and well maintained. I want to work towards better common rooms, cycle stands, and overall hostel facilities.",
+      "Hostels should feel comfortable, not just functional. Better common spaces and facilities can really improve daily life.",
   },
 ];
 
@@ -84,7 +122,7 @@ export default function AgendaSection() {
     <SectionWrapper id="agenda" className="py-24 md:py-32 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}

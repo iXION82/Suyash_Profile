@@ -12,15 +12,16 @@ interface AgendaCardProps {
 export default function AgendaCard({ icon, title, description, index }: AgendaCardProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 60, scale: 0.9 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.3 }}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{
-        duration: 0.6,
-        delay: index * 0.12,
-        ease: "easeOut",
+        duration: 0.45,
+        delay: (index % 3) * 0.08,
+        ease: [0.25, 0.46, 0.45, 0.94],
       }}
-      whileHover={{ y: -8, scale: 1.03 }}
+      whileHover={{ y: -4 }}
+      style={{ willChange: "transform, opacity" }}
       className="glass-light rounded-2xl p-6 group cursor-default hover:border-gold/30 transition-all duration-300"
     >
       <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
