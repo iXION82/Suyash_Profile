@@ -82,7 +82,7 @@ export default function JoinSection() {
             ))}
           </div>
           <p className="text-white/50 text-sm">
-            <span className="text-gold font-bold">{volunteerCount}</span> students have joined
+            <span className="text-gold font-bold">100+</span> students have joined
           </p>
         </motion.div>
       </div>
